@@ -1,0 +1,18 @@
+{
+  "schema": "atlantis-gallery-publication/1",
+  "approval_digest": "07975e4a47bff6956d4bca464176298a2508a50366a959524b2954e5bc223a6c",
+  "files": [
+    {
+      "file": "interaction.json",
+      "bytes": 1965,
+      "sha256": "64163ccc6f538b474c415a043d7a887d94adc14b7ff759205f0c1f13d6179e23",
+      "destination": "creator-pages"
+    },
+    {
+      "file": "preview/T10.glb",
+      "bytes": 26721916,
+      "sha256": "4d0838093e9af85bf0af7f14c88296a1b20c4caf9127d66330b9c99a3b67caca",
+      "destination": "creator-pages"
+    }
+  ]
+}

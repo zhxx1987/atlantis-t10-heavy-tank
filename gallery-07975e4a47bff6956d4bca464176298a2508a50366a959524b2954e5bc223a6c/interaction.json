@@ -1,0 +1,107 @@
+{
+  "schema": "atlantis-gallery-interactions/2",
+  "joints": [
+    {
+      "id": "turret",
+      "label": "Turret rotation",
+      "node": "Turret",
+      "kind": "rotation",
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "limits": [
+        -3.14,
+        3.14
+      ]
+    },
+    {
+      "id": "PortHatch",
+      "label": "Port hatch",
+      "node": "PortHatch",
+      "kind": "rotation",
+      "axis": [
+        0,
+        -1,
+        0
+      ],
+      "limits": [
+        0,
+        1.18
+      ],
+      "speed": 0.82,
+      "slider": false
+    },
+    {
+      "id": "StarboardHatch",
+      "label": "Starboard hatch",
+      "node": "StarboardHatch",
+      "kind": "rotation",
+      "axis": [
+        0,
+        -1,
+        0
+      ],
+      "limits": [
+        0,
+        1.18
+      ],
+      "speed": 0.82,
+      "slider": false
+    }
+  ],
+  "buttons": [
+    {
+      "id": "toggle-PortHatch",
+      "label": "Toggle port hatch",
+      "node": "PortHatch",
+      "actions": [
+        {
+          "type": "toggle",
+          "joint": "PortHatch",
+          "values": [
+            0,
+            1.18
+          ]
+        }
+      ]
+    },
+    {
+      "id": "toggle-StarboardHatch",
+      "label": "Toggle starboard hatch",
+      "node": "StarboardHatch",
+      "actions": [
+        {
+          "type": "toggle",
+          "joint": "StarboardHatch",
+          "values": [
+            0,
+            1.18
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reset",
+      "label": "Return to display pose",
+      "actions": [
+        {
+          "type": "set",
+          "joint": "turret",
+          "value": 0
+        },
+        {
+          "type": "set",
+          "joint": "PortHatch",
+          "value": 0
+        },
+        {
+          "type": "set",
+          "joint": "StarboardHatch",
+          "value": 0
+        }
+      ]
+    }
+  ]
+}
