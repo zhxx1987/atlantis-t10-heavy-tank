@@ -1,0 +1,5 @@
+body.drive > :not(canvas):not(script):not(style):not(#drive-ui):not(#stage) {display:none!important}
+#drive-ui {position:fixed;left:26px;bottom:23px;color:#f7f3df;background:#162024ed;border-left:3px solid #d3b96c;padding:13px 17px;font:15px/1.45 system-ui,sans-serif;z-index:100}
+#drive-ui button {font:inherit;color:#182023;background:#e3ce8a;border:0;border-radius:3px;padding:4px 12px;margin-left:12px;cursor:pointer}
+#drive-ui small {display:block;color:#c5cbbf;margin-top:4px}
+

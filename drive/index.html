@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Drive the T-10 · Atlantis Gallery</title>
+  <style>
+    html,body,#stage{margin:0;width:100%;height:100%;background:#26302e}
+    #stage{position:relative;overflow:hidden} #stage canvas{display:block;width:100%;height:100%}
+    #back,#error{position:absolute;z-index:2;top:16px;left:18px;color:#fff;background:#162024ed;padding:8px 12px;font:14px/1.4 system-ui,sans-serif;border-radius:3px}
+    #error{top:60px;max-width:min(520px,85vw)} #error:empty{display:none}
+  </style>
+</head>
+<body>
+  <main id="stage" aria-label="T-10 third-person driving scene">
+    <a id="back" href="/AtlantisGallery/work.html?model=t10-heavy-tank">Back to Gallery</a>
+    <p id="error" role="alert"></p>
+  </main>
+  <script type="module" src="./boot.js"></script>
+  <script type="module" src="./game.js"></script>
+</body>
+</html>
