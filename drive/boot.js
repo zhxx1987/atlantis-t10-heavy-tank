@@ -39,7 +39,7 @@ try {
   });
   window.sceneViewer = {viewer, loaded: false};
   await viewer.ready;
-  await viewer.loadScene(new URL('./scene.json', import.meta.url).href);
+  await viewer.loadScene(new URL('./scene.json?v=20261120-suspension-v4', import.meta.url).href);
   window.sceneViewer.loaded = true;
 } catch (error) {
   document.querySelector('#error').textContent = 'Driving scene could not start. ' + error.message;
