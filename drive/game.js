@@ -1,3 +1,4 @@
+import {vehicleMode} from './vehicle-mode.js';
 import {loadPyodide} from './runtime/pyodide.mjs';
 import {Vector3,Quaternion} from '/AtlantisGallery/atlantis-renderer/vendor/tidewater/src/engine/index.js';
 
@@ -97,7 +98,9 @@ advance`);
     edge=e.clientX<12?-1:e.clientX>window.innerWidth-12?1:0;
   }
   function resetEdge(){edge=0;}
-  function engaged(on){
+  const sharedMode=vehicleMode(v,on=>applyMode(on));
+  function engaged(on){sharedMode.set(on);}
+  function applyMode(on){
     active=on;clear();edge=0;
     button.textContent=on?'Release driving controls':'Resume driving';
     if(on){
@@ -171,6 +174,7 @@ advance`);
     if(shots>heard){heard=shots;audio.currentTime=0;audio.play().catch(()=>{});}
     v.camera.position.set(eye[0],eye[2],-eye[1]);v.controls.target.set(aim[0],aim[2],-aim[1]);
     v.controls.changed();
+    v.shadowFocus={center:[x,z+1.5,-y],radius:7.86};
     label.textContent=(speed*3.6).toFixed(1)+' km/h · '+(grounded?'Ground contact '+grounded+'/14':'Airborne')+(braking?' · Braking':'');
     window.t10Telemetry={x,y,z,pitch:bodyTilt,roll,suspension,grounded,speed,braking,yaw,left,right,turret:t,elevation:p,recoil,flash,shots,active,hatch,audioStarts,frames:++frames,track:l,camera:'third-person',tip:glow.position.toArray()};
   };
