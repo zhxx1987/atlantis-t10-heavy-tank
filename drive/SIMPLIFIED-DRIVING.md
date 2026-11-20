@@ -8,8 +8,19 @@ Simulation uses a persistent 120 Hz accumulator and limits long inactive-tab fra
 
 ## Downloaded local browser version
 
-Extract the full model download. Install Python and Atlantis, set ATLANTIS_WORKSPACE to the installed Atlantis workspace containing rendering/tools/serve_scene_viewer.py, then run Start-Game.cmd or python game_server.py. Use the URL printed by the server in a WebGPU browser.
+There are three downloads: MODEL assets, combined CONTROLS (simplified game +
+native real physics), and editable MODELING SOURCE. Extract MODEL and CONTROLS
+into the SAME new directory with relative paths preserved. Close old sessions
+before replacing files. A new controls package replaces the previous controller
+files; do not add an older independent simplified-motion archive. Extract the
+source package into a separate directory only when rebuilding geometry.
 
-The separate simplified-code archive can update an extracted full model package; it includes GameCourse.glb but requires the model, rig, audio and bundled Pyodide runtime from the full download. Extract it alongside those files. The new game uses game_drive_core.py. Isaac continues using the separate drive_core.py, isaac_drive.py, original Course.glb and Drive.usda.
+Install Python and Atlantis. Set ATLANTIS_WORKSPACE to the installed Atlantis
+workspace containing rendering/tools/serve_scene_viewer.py, then run
+Start-Game.cmd or python game_server.py. Use the printed URL in a WebGPU browser.
+The CONTROLS archive includes the Pyodide runtime and game_drive_core.py.
+The MODEL archive supplies GameCourse.glb, the tank, textures, rig and audio.
+Isaac uses the independent drive_core.py and isaac_drive.py with Drive.usda and
+the original Course.glb. See ASSEMBLE_ISAAC.md and ASSEMBLE_GAME_ENGINE.md.
 
 Run python check_game_drive.py for the portable regression, or await window.t10RunCheck() in the running browser for the identical checks in Pyodide. Checks cover braking/hold, coast distance, stop-before-reverse, nose dip/settle, airborne/landing, uneven ground/roll, flat stability, 30/60/144 FPS, snapshot restoration and native-mode isolation.
